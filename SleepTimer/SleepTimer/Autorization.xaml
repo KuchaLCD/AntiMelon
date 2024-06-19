@@ -1,0 +1,17 @@
+﻿<Window x:Class="SleepTimer.Autorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepTimer"
+        mc:Ignorable="d"
+        Title="Autorization" Height="136.068" Width="209.586" Icon="Elements/AntiMelon.png">
+    <Grid>
+        <PasswordBox x:Name="PassField" HorizontalAlignment="Left" Margin="72,41,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LoginField" HorizontalAlignment="Left" Height="23" Margin="72,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="ApplyClosing" Content="Подтвердить закрытие" HorizontalAlignment="Left" Margin="15,64,0,0" VerticalAlignment="Top" Width="177" Height="32" Click="ApplyClosing_Click" IsDefault="True"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

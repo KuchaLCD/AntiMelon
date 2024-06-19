@@ -1,0 +1,49 @@
+﻿<Window x:Class="SleepTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepTimer"
+        mc:Ignorable="d"
+        Title="АнтиАбуз" Height="226.666" Width="494.333" Icon="Elements/AntiMelon.png">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="122" Margin="367,10,0,0" VerticalAlignment="Top" Width="109" Source="Elements/АнтиАбуз.png" RenderTransformOrigin="0.486,0.451"/>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="351" Click="StartButton_Click" Height="34" Background="#FF8EFF63"/>
+        <Canvas Margin="10,28,704,364">
+            <Label x:Name="HoursLabel" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="17"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="41"/>
+            <Label x:Name="MinutesLabel" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="23" Canvas.Top="1"/>
+            <Label x:Name="SecondsLabel" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="46" Canvas.Top="1"/>
+
+        </Canvas>
+        <Canvas x:Name="SetTimer" Margin="124,35,265,135">
+            <TextBox x:Name="HourSet" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Canvas.Top="2" MaxLength="2"/>
+            <TextBox x:Name="MinSet" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Canvas.Left="31" Canvas.Top="2" MaxLength="2"/>
+            <TextBox x:Name="SecSet" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Canvas.Left="62" Canvas.Top="2" MaxLength="2"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="22"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="53"/>
+
+        </Canvas>
+        <Button x:Name="ApplySet" Content="Применить" HorizontalAlignment="Left" Height="25" Margin="124,66,0,0" VerticalAlignment="Top" Width="88" Background="#FFFDFDFD" Click="ApplySet_Click"/>
+        <Label Content="Время игры" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="CountingLabel" Content="Количество часов/минут" HorizontalAlignment="Left" Margin="119,9,0,0" VerticalAlignment="Top"/>
+        <Canvas Margin="10,65,704,327">
+            <Label x:Name="HoursLabelRestrict" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="1"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="17"/>
+            <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="41"/>
+            <Label x:Name="MinutesLabelRestrict" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="23" Canvas.Top="1"/>
+            <Label x:Name="SecondsLabelRestrict" Content="00" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="46" Canvas.Top="1"/>
+
+        </Canvas>
+        <Button x:Name="Additionals" Content="Доп. функционал" HorizontalAlignment="Left" Margin="367,166,0,0" VerticalAlignment="Top" Width="109" Background="#FF6FFFF2" Click="Additionals_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="10,96,0,0" VerticalAlignment="Top" Width="351"/>
+        <Label Content="Готовые шаблоны" HorizontalAlignment="Left" Margin="119,101,0,0" VerticalAlignment="Top" FontSize="10"/>
+        <Button x:Name="ThirtyMinutes" Content="30 минут" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Width="63" Click="ThirtyMinutes_Click"/>
+        <Button x:Name="OneHour" Content="1 час" HorizontalAlignment="Left" Margin="78,129,0,0" VerticalAlignment="Top" Width="82" Click="OneHour_Click"/>
+        <Button x:Name="TwoHours" Content="2 часа" HorizontalAlignment="Left" Margin="165,129,0,0" VerticalAlignment="Top" Width="83" Click="TwoHours_Click"/>
+        <Button x:Name="CustomValue" Content="Кастом значение" HorizontalAlignment="Left" Margin="253,129,0,0" VerticalAlignment="Top" Width="108" Click="CustomValue_Click"/>
+        <TextBlock x:Name="RuleText" HorizontalAlignment="Left" Height="56" Margin="221,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="10"><Run Text="Если значение больше минуты, то нужно вводить в формате"/><Run Text=" 1 минута 59 секунд"/><Run Text=","/><LineBreak/><Run Text="1 час 1 минута 59 секунд и т.д."/></TextBlock>
+
+    </Grid>
+</Window>

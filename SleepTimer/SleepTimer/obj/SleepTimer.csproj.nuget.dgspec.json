@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\CATAT\\source\\repos\\SleepTimer\\SleepTimer\\SleepTimer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\CATAT\\source\\repos\\SleepTimer\\SleepTimer\\SleepTimer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CATAT\\source\\repos\\SleepTimer\\SleepTimer\\SleepTimer.csproj",
+        "projectName": "SleepTimer",
+        "projectPath": "C:\\Users\\CATAT\\source\\repos\\SleepTimer\\SleepTimer\\SleepTimer.csproj",
+        "packagesPath": "C:\\Users\\CATAT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CATAT\\source\\repos\\SleepTimer\\SleepTimer\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CATAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
