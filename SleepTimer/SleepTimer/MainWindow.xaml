@@ -43,7 +43,9 @@
         <Button x:Name="OneHour" Content="1 час" HorizontalAlignment="Left" Margin="78,129,0,0" VerticalAlignment="Top" Width="82" Click="OneHour_Click"/>
         <Button x:Name="TwoHours" Content="2 часа" HorizontalAlignment="Left" Margin="165,129,0,0" VerticalAlignment="Top" Width="83" Click="TwoHours_Click"/>
         <Button x:Name="CustomValue" Content="Кастом значение" HorizontalAlignment="Left" Margin="253,129,0,0" VerticalAlignment="Top" Width="108" Click="CustomValue_Click"/>
-        <TextBlock x:Name="RuleText" HorizontalAlignment="Left" Height="56" Margin="221,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="10"><Run Text="Если значение больше минуты, то нужно вводить в формате"/><Run Text=" 1 минута 59 секунд"/><Run Text=","/><LineBreak/><Run Text="1 час 1 минута 59 секунд и т.д."/></TextBlock>
+        <Button x:Name="GuideButton" HorizontalAlignment="Left" Margin="227,65,0,0" VerticalAlignment="Top" Width="135" Height="26" Content="Быстрый гайд" Click="GuideButton_Click">
+        </Button>
+        <Label x:Name="FormatType" Content="Формат ч\мин\сек" HorizontalAlignment="Left" Margin="226,35,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

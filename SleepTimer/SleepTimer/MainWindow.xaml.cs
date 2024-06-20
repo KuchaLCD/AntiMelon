@@ -27,9 +27,12 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Hidden;
             SetTimer.Visibility = Visibility.Hidden;
             ApplySet.Visibility = Visibility.Hidden;
-            RuleText.Visibility = Visibility.Hidden;
+            GuideButton.Visibility = Visibility.Hidden;
+            FormatType.Visibility = Visibility.Hidden;
+            StartButton.IsEnabled = false;
         }
         private int increment = 0;
+        private int kd = 0;
         private DispatcherTimer timer;
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
@@ -44,6 +47,15 @@ namespace SleepTimer
             CustomValue.IsEnabled = false;
         }
         #region GPT
+        private async void ShowNotificationAsync()
+        {
+            if (Math.Abs(Convert.ToInt32(HoursLabel.Content) - Convert.ToInt32(HoursLabelRestrict.Content)) == 0 && Math.Abs(Convert.ToInt32(MinutesLabel.Content) - Convert.ToInt32(MinutesLabelRestrict.Content)) == 5 && kd == 0)
+            {
+                kd++;
+                await Task.Delay(5); // Подождать 
+                MessageBox.Show("До окончания осталось 5 минут!\nНачинайте заканчивать все дела в игре!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+            }
+        }
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             var result = MessageBox.Show("Вы действительно хотите закрыть приложение?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -74,6 +86,7 @@ namespace SleepTimer
         #endregion
         private void timerTick(object sender, EventArgs e)
         {
+            ShowNotificationAsync();
             if ((Convert.ToInt32(HoursLabel.Content) == Convert.ToInt32(HoursLabelRestrict.Content)) && (Convert.ToInt32(MinutesLabel.Content) == Convert.ToInt32(MinutesLabelRestrict.Content)) && (Convert.ToInt32(SecondsLabel.Content) == Convert.ToInt32(SecondsLabelRestrict.Content)))
             {
                 MessageBox.Show("Время игры закончилось! Нажми ОК", "GG", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
@@ -87,6 +100,7 @@ namespace SleepTimer
                 TwoHours.IsEnabled = true;
                 CustomValue.IsEnabled = true;
                 increment = 0; // Сброс счетчика
+                kd = 0; // Сброс счетчика
                 LockComputer();
                 return; // Выход из метода, чтобы не продолжать увеличение времени
             }
@@ -146,7 +160,8 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Hidden;
             SetTimer.Visibility = Visibility.Hidden;
             ApplySet.Visibility = Visibility.Hidden;
-            RuleText.Visibility = Visibility.Hidden;
+            GuideButton.Visibility = Visibility.Hidden;
+            FormatType.Visibility = Visibility.Hidden;
 
             StartButton.IsEnabled = true;
         }
@@ -158,14 +173,15 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Hidden;
             SetTimer.Visibility = Visibility.Hidden;
             ApplySet.Visibility = Visibility.Hidden;
-            RuleText.Visibility = Visibility.Hidden;
+            GuideButton.Visibility = Visibility.Hidden;
+            FormatType.Visibility = Visibility.Hidden;
 
             ThirtyMinutes.IsEnabled = false;
             OneHour.IsEnabled = true;
             TwoHours.IsEnabled = true;
 
             HoursLabelRestrict.Content = "00";
-            MinutesLabelRestrict.Content = "31";
+            MinutesLabelRestrict.Content = "36";
             SecondsLabelRestrict.Content = "59";
         }
 
@@ -176,14 +192,15 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Hidden;
             SetTimer.Visibility = Visibility.Hidden;
             ApplySet.Visibility = Visibility.Hidden;
-            RuleText.Visibility = Visibility.Hidden;
+            GuideButton.Visibility = Visibility.Hidden;
+            FormatType.Visibility = Visibility.Hidden;
 
             ThirtyMinutes.IsEnabled = true;
             OneHour.IsEnabled = false;
             TwoHours.IsEnabled = true;
 
             HoursLabelRestrict.Content = "01";
-            MinutesLabelRestrict.Content = "01";
+            MinutesLabelRestrict.Content = "06";
             SecondsLabelRestrict.Content = "59";
         }
 
@@ -194,14 +211,15 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Hidden;
             SetTimer.Visibility = Visibility.Hidden;
             ApplySet.Visibility = Visibility.Hidden;
-            RuleText.Visibility = Visibility.Hidden;
+            GuideButton.Visibility = Visibility.Hidden;
+            FormatType.Visibility = Visibility.Hidden;
 
             ThirtyMinutes.IsEnabled = true;
             OneHour.IsEnabled = true;
             TwoHours.IsEnabled = false;
 
             HoursLabelRestrict.Content = "02";
-            MinutesLabelRestrict.Content = "01";
+            MinutesLabelRestrict.Content = "06";
             SecondsLabelRestrict.Content = "59";
         }
 
@@ -220,8 +238,14 @@ namespace SleepTimer
             CountingLabel.Visibility = Visibility.Visible;
             SetTimer.Visibility = Visibility.Visible;
             ApplySet.Visibility = Visibility.Visible;
-            RuleText.Visibility = Visibility.Visible;
+            GuideButton.Visibility = Visibility.Visible;
+            FormatType.Visibility = Visibility.Visible;
         }
         #endregion
+
+        private void GuideButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Вводить свои значения нужно в формате часы/минуты/секунды\nК примеру, нужно ввести 1 час, тогда это должно выглядеть так:\n01:06:59, т.к. нужно оставить промежуток времени в 5 минут для активации уведомления о скором ококнчании оставшегося времени для игры\n------------------------------------------\nТаким же способом вводятся и остальные значения:\nПолчаса: 00:36:59\n2 часа: 02:06:59\n5 часов: 05:06:59\nИ так далее", "Гайд на ввод значений", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+        }
     }
 }
