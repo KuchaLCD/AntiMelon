@@ -1,0 +1,16 @@
+﻿<Window x:Class="SleepTimer.StopPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepTimer"
+        mc:Ignorable="d"
+        Title="Окончание игры" Height="450" Width="800" Icon="Elements/AntiMelon.png" Topmost="True" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Button x:Name="ApplyClose" Content="Подтвердить закрытие" HorizontalAlignment="Center" Margin="278,364,280,10" VerticalAlignment="Center" Width="234" Height="45" Click="ApplyClose_Click"/>
+        <Label Content="ВАШЕ ВРЕМЯ ЗАКОНЧИЛОСЬ!" HorizontalAlignment="Center" Margin="149,68,133,0" VerticalAlignment="Top" FontSize="36"/>
+        <Image HorizontalAlignment="Center" Height="162" Margin="310,142,320,0" VerticalAlignment="Top" Width="162" Source="Elements/АнтиАбуз.png"/>
+        <Label Content="Нажми на кнопку для окончания игровой сессии" HorizontalAlignment="Center" Margin="181,324,187,55" VerticalAlignment="Center" FontSize="18" Height="40" Width="424"/>
+
+    </Grid>
+</Window>

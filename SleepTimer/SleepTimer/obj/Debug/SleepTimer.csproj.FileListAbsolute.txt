@@ -36,3 +36,7 @@ C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SleepTimer.csproj.Gener
 C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SleepTimer.csproj.CoreCompileInputs.cache
 C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SleepTimer.exe
 C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SleepTimer.pdb
+C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SPAM.g.cs
+C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\SPAM.baml
+C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\StopPage.g.cs
+C:\Users\CATAT\AntiMelon\SleepTimer\SleepTimer\obj\Debug\StopPage.baml

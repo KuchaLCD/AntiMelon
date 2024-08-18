@@ -52,8 +52,10 @@ namespace SleepTimer
             if (Math.Abs(Convert.ToInt32(HoursLabel.Content) - Convert.ToInt32(HoursLabelRestrict.Content)) == 0 && Math.Abs(Convert.ToInt32(MinutesLabel.Content) - Convert.ToInt32(MinutesLabelRestrict.Content)) == 5 && kd == 0)
             {
                 kd++;
-                await Task.Delay(5); // Подождать 
-                MessageBox.Show("До окончания осталось 5 минут!\nНачинайте заканчивать все дела в игре!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+                await Task.Delay(5); // Подождать
+                SPAM sp = new SPAM();
+                sp.ShowDialog();
+                //MessageBox.Show("До окончания осталось 5 минут!\nНачинайте заканчивать все дела в игре!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
             }
         }
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -89,19 +91,19 @@ namespace SleepTimer
             ShowNotificationAsync();
             if ((Convert.ToInt32(HoursLabel.Content) == Convert.ToInt32(HoursLabelRestrict.Content)) && (Convert.ToInt32(MinutesLabel.Content) == Convert.ToInt32(MinutesLabelRestrict.Content)) && (Convert.ToInt32(SecondsLabel.Content) == Convert.ToInt32(SecondsLabelRestrict.Content)))
             {
-                MessageBox.Show("Время игры закончилось! Нажми ОК", "GG", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+                StopPage sp = new StopPage();
+                sp.ShowDialog();
                 timer.Stop(); // Остановка таймера
                 HoursLabel.Content = "00";
                 MinutesLabel.Content = "00";
                 SecondsLabel.Content = "00";
-                StartButton.IsEnabled = true; // Возможно, вы захотите снова включить кнопку старта
+                StartButton.IsEnabled = true; 
                 ThirtyMinutes.IsEnabled = true;
                 OneHour.IsEnabled = true;
                 TwoHours.IsEnabled = true;
                 CustomValue.IsEnabled = true;
                 increment = 0; // Сброс счетчика
                 kd = 0; // Сброс счетчика
-                LockComputer();
                 return; // Выход из метода, чтобы не продолжать увеличение времени
             }
 
@@ -247,5 +249,6 @@ namespace SleepTimer
         {
             MessageBox.Show("Вводить свои значения нужно в формате часы/минуты/секунды\nК примеру, нужно ввести 1 час, тогда это должно выглядеть так:\n01:06:59, т.к. нужно оставить промежуток времени в 5 минут для активации уведомления о скором ококнчании оставшегося времени для игры\n------------------------------------------\nТаким же способом вводятся и остальные значения:\nПолчаса: 00:36:59\n2 часа: 02:06:59\n5 часов: 05:06:59\nИ так далее", "Гайд на ввод значений", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
         }
+
     }
 }
